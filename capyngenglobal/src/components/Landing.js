@@ -14,8 +14,10 @@ const Landing = () => {
         position: 'relative',
       }}
     >
+      {/* Dark Overlay */}
       <div className="landing-overlay"></div>
 
+      {/* Content */}
       <div className="landing-content px-3">
         <h1 className="landing-heading">
           YOUR IT EXCELLENCE AND <br />

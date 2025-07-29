@@ -1,9 +1,9 @@
-import '../style.css'; // adjust path if needed
+import '../style.css'; // Adjust path if needed
 
 const WelcomeMessage = () => {
   return (
-    <section className="welcome-section">
-      <div className="welcome-message">
+    <section className="welcome-section d-flex justify-content-center align-items-center">
+      <div className="welcome-message text-center">
         <h2>Welcome to Capyngen</h2>
         <p>
           Where execution collides with innovation. Our full-stack IT solutions and digital marketing
