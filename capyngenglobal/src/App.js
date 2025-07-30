@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import WelcomeMessage from './components/WelcomeMessage';
-import Industries from './components/Industries';
+import IndustriesPage from './components/IndustriesPage';
 import Stats from './components/Stats';
 import WhyChoose from './components/WhyChoose';
 import Introduction from './components/Introduction';
@@ -25,6 +25,23 @@ import Cybersecurity from './components/services/cybersecurity/cybersecurity';
 import ArtificialIntelligence from './components/services/artificial-intelligence/artificial-intelligence';
 import SeoSmm from './components/services/seo-smm/seo-smm';
 import Services from './components/services/ServicesPage';
+import BankingIndustryPage from './components/industries/banking/banking';
+import CommunicationMedia from './components/industries/communication-media/communication-media';
+import Education from './components/industries/education/education';
+import HealthCare from './components/industries/healthcare-fitness/healthcare-fitness';
+import OilGas from './components/industries/oil-gas/oil-gas';
+import Manufacturing from './components/industries/manufacturing/manufacturing';
+import Retail from './components/industries/retail/retail';
+import RealState from './components/industries/real-estate/real-estate';
+import ConsumerPackage from './components/industries/consumer-packaged-goods/consumer-packaged-goods';
+import EnergyResources from './components/industries/energy-resources-utilities/energy-resources-utilities';
+import HighTech from './components/industries/high-tech/high-tech';
+import TravelLogistics from './components/industries/travel-logistics/travel-logistics';
+import Gaming from './components/industries/gaming/gaming';
+import PublicService from './components/industries/public-service/public-service';
+import Insurance from './components/industries/insurance/insurance';
+import Automotive from './components/industries/automotive/automotive';
+import OnDemand from './components/industries/on-demand/on-demand';
 
 function App() {
   const location = useLocation();
@@ -50,7 +67,7 @@ function App() {
             <>
               <Landing />
               <WelcomeMessage />
-              <Industries />
+              <IndustriesPage/>
               <Stats />
               <WhyChoose />
             </>
@@ -72,7 +89,27 @@ function App() {
          <Route path="/services/network-solutions-services" element={<NetworkSolutions />} />
          <Route path="/services/cybersecurity" element={<Cybersecurity />} />
          <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
-<Route path="/services" element={<Services />} />        {/* Add other routes here */}
+         
+<Route path="/services" element={<Services />} />   
+
+<Route path="/industries/banking" element={<BankingIndustryPage/>} />
+<Route path="/industries/communication-media" element={<CommunicationMedia/>} />
+<Route path="/industries/education" element={<Education/>} />
+<Route path="/industries/healthcare-fitness" element={<HealthCare/>} />
+<Route path="/industries/oil-gas" element={<OilGas/>} />
+<Route path="/industries/manufacturing" element={<Manufacturing/>} />
+<Route path="/industries/retail" element={<Retail/>} />
+<Route path="/industries/real-estate" element={<RealState/>} />
+<Route path="/industries/consumer-packaged-goods" element={<ConsumerPackage/>} />
+<Route path="/industries/energy-resources-utilities" element={<EnergyResources/>} />
+<Route path="/industries/travel-logistics" element={<TravelLogistics/>} />
+<Route path="/industries/high-tech" element={<HighTech/>} />
+<Route path="/industries/gaming" element={<Gaming/>} />
+<Route path="/industries/public-service" element={<PublicService/>} />
+<Route path="/industries/insurance" element={<Insurance/>} />
+<Route path="/industries/automotive" element={<Automotive/>} />
+<Route path="/industries/on-demand" element={<OnDemand/>} />
+     {/* Add other routes here */}
       </Routes>
     </>
   );

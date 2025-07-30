@@ -128,7 +128,7 @@ const menuData = {
                   onMouseEnter={() => setActiveMenu(key)}
                   className={activeMenu === key ? 'active' : ''}
                 >
-                  <a href="services">{key} <span className="float-end">›</span></a>
+                  <a href="/services">{key} <span className="float-end">›</span></a>
                 </li>
               ))}
             </ul>
