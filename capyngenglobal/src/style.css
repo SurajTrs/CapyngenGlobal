@@ -85,7 +85,6 @@ html, body {
 
 @font-face {
   font-family: 'ISOCPEUR';
-
   font-weight: 400;
   font-style: normal;
 }
@@ -475,7 +474,7 @@ h3 {
   flex-direction: column;
 }
 
-/* .white-circle {
+ .white-circle {
   position: absolute;
   width: 38px; 
   height: 38px;
@@ -486,7 +485,7 @@ h3 {
   transform: translate(-50%, -50%) scale(0);
   animation-fill-mode: forwards;
   z-index: 10;
-} */
+} 
 
 .white-circle.expand {
   animation: circleExpand 1.2s cubic-bezier(0.9, 0, 0.2, 0.1) forwards;
@@ -510,61 +509,109 @@ h3 {
   transform: translateY(100vh) scale(1);
   z-index: 20;
   pointer-events: none;
-  transition: opacity 0.6s ease, transform 0.8s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .intro-text.slide-up {
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.5, 0, 0.4, 2);
 }
 
 .intro-text.pop-out {
   opacity: 0;
   transform: translateY(0) scale(8);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-.mega-dropdown {
-  position: absolute;
-  top: 65px;
-  left: 0;
-  width: 100vw;
-  background-color: #1c1f20;
-  color: white;
-  padding: 2rem 4rem;
-  z-index: 1050;
-  display: flex;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}/* --- Navbar Base Styles (keep existing) --- */
+/* src/style.css */
+
+/* --- Base Navbar Styles --- */
+.capy-navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure navbar is on top */
 }
 
-.mega-dropdown.visible {
+.capy-logo {
+  font-family: 'Montserrat', sans-serif; /* Example font */
+  letter-spacing: 1px;
+}
+
+/* Base nav-link styles for desktop */
+.navbar-nav .nav-item .nav-link {
+  padding: 1rem 1.2rem; /* More generous padding */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  text-decoration: none; /* Remove default underline */
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item.dropdown-trigger .nav-link.fw-semibold {
+  color: #00bcd4 !important; /* Highlight color for hover/active */
+}
+
+/* Desktop underline effect on hover */
+.navbar-nav .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+  width: calc(100% - 2.4rem); /* Adjust width to fit padding */
+}
+
+
+/* --- Mega Dropdown Styles (Desktop only) --- */
+.mega-dropdown {
+  position: absolute;
+  top:100px; /* Adjust this to match your navbar's actual height */
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  background-color: #1c1f20; /* Dark background */
+  color: white;
+  padding: 2rem 4rem; /* Inner padding */
+  z-index: 1050; /* Above navbar content */
+  display: flex; /* Flexbox for left/right panels */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* Slight initial drop effect for animation */
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.mega-dropdown.visible { /* Class added by JS for visibility */
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
 .dropdown-left {
-  width: 25%;
-  border-right: 1px solid #444;
+  width: 25%; /* 25% width for left category panel */
+  border-right: 1px solid #444; /* Separator */
   padding-right: 2rem;
 }
 
 .dropdown-left ul {
   margin: 0;
   padding: 0;
+  list-style: none; /* Remove default list bullets */
 }
 
 .dropdown-left li {
   padding: 0.75rem 0;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .dropdown-left li.active,
 .dropdown-left li:hover {
-  background-color: #2b2f31;
+  background-color: #2b2f31; /* Background on hover/active */
 }
 
 .dropdown-left a {
@@ -572,6 +619,7 @@ h3 {
   text-decoration: none;
   display: block;
   font-weight: 500;
+  padding: 0 10px; /* Internal padding for links */
 }
 
 .dropdown-left a span {
@@ -580,39 +628,154 @@ h3 {
 }
 
 .dropdown-right {
-  flex-grow: 1;
+  flex-grow: 1; /* Take remaining space */
   padding-left: 2rem;
 }
 
 .submenu-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1rem; /* Gap between grid items */
 }
 
-.columns-1 {
-  grid-template-columns: repeat(1, 1fr);
-}
-.columns-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-.columns-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+.columns-1 { grid-template-columns: repeat(1, 1fr); }
+.columns-2 { grid-template-columns: repeat(2, 1fr); }
+.columns-3 { grid-template-columns: repeat(3, 1fr); }
 
 .submenu-item {
-  color: #ccc;
+  color: #ccc; /* Lighter color for sub-items */
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.25rem 0;
   display: block;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .submenu-item:hover {
-  color: white;
+  color: white; /* White on hover */
   text-decoration: underline;
 }
 
 
+/* --- Mobile Specific Styles (Applies to screens smaller than 992px) --- */
+@media (max-width: 991.98px) {
+
+  .navbar-collapse {
+    background-color: #1a1a1a; /* Darker background for collapsed menu */
+    padding-bottom: 15px;
+  }
+
+  /* Adjust padding for all top-level nav items in mobile view */
+  .navbar-nav .nav-item .nav-link {
+    padding: 10px 15px;
+    text-align: left;
+  }
+
+  /* Remove desktop-only underline on mobile */
+  .navbar-nav .nav-item .nav-link::after {
+    content: none;
+  }
+
+  /* Hide desktop mega-dropdown entirely on mobile */
+  .mega-dropdown {
+    display: none !important; /* Forces hiding on mobile */
+  }
+
+  /* Mobile Top-Level Category Toggle Button (e.g., What We Offer, Industries) */
+  .mobile-submenu-toggle {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: white; /* Ensure text color is white */
+    transition: color 0.2s ease;
+    width: 100%; /* Ensure it takes full width */
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flex for content and toggle icon */
+    justify-content: space-between; /* Space between text and icon */
+    align-items: center; /* Vertically align text and icon */
+  }
+  .mobile-submenu-toggle:hover {
+    color: #00bcd4; /* Highlight on hover */
+  }
+
+  /* Wrapper for each mobile menu item (including links and toggle buttons) */
+  .mobile-menu-item-wrapper {
+    padding-right: 15px; /* Consistent right padding for the entire row */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle line for each item */
+    margin-bottom: 0;
+  }
+  /* Remove border for the last item in any given list (ul) */
+  .mobile-menu-item-wrapper:last-child {
+      border-bottom: none;
+  }
+
+
+  /* Styles for actual menu links within mobile dropdown levels */
+  .mobile-menu-link {
+    font-size: 1rem;
+    padding: 0.5rem 0; /* Vertical padding inside the link */
+    transition: color 0.2s ease;
+    text-decoration: none; /* Remove default link underline */
+  }
+  .mobile-menu-link:hover {
+    color: #00bcd4;
+  }
+
+  /* Specific style for links that act as category toggles (e.g., 'Perpetually Adaptive Enterprise') */
+  .mobile-menu-category {
+    font-weight: 500; /* Slightly bolder for categories */
+  }
+
+  /* Style for the toggle button (caret) next to expandable links */
+  .mobile-toggle-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem; /* Match vertical padding of link, some horizontal */
+    line-height: 1; /* Align arrow vertically */
+    transition: transform 0.3s ease;
+    background: none; /* No button background */
+    border: none; /* No button border */
+    color: inherit; /* Inherit color from parent, usually white */
+    cursor: pointer;
+  }
+  /* Optional: Rotate arrow on open state */
+  .mobile-toggle-btn[aria-expanded="true"] {
+    transform: rotate(180deg);
+  }
+
+  /* Styles for nested mobile submenu lists (the <ul> containers) */
+  .mobile-submenu-level {
+    list-style: none;
+    padding: 0; /* Reset default list padding */
+    padding-top: 5px; /* Padding inside the submenu container */
+    padding-bottom: 5px;
+    margin-top: 5px; /* Space above the submenu container */
+    background-color: rgba(0, 0, 0, 0.2); /* Subtle background for nested levels */
+    border-radius: 5px;
+    margin-bottom: 10px; /* Space after a nested block */
+    overflow: hidden; /* Important for containing children and potential animations */
+    /* Note: For smooth height transitions on collapse/expand, you'd typically need
+       to dynamically set max-height in JS or use a dedicated animation library.
+       Here, it appears/disappears instantly when 'isOpen' changes. */
+  }
+
+  /* Ensure static nav items (Company, Careers, etc.) look good on mobile too */
+  .navbar-nav .nav-item:not(.d-none):not(.dropdown-trigger) {
+    width: 100%; /* Make full width on mobile */
+    text-align: left;
+    padding: 0 15px; /* Add horizontal padding to align with dropdowns */
+  }
+  .navbar-nav .nav-item:not(.d-none):not(.dropdown-trigger) .nav-link {
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Consistent border */
+  }
+  /* Remove bottom border for the very last static nav item */
+  .navbar-nav .nav-item:last-child .nav-link {
+      border-bottom: none;
+  }
+}
 .core-title {
   font-size: 2.5rem;
   font-weight: 600;

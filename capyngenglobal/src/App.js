@@ -42,6 +42,8 @@ import PublicService from './components/industries/public-service/public-service
 import Insurance from './components/industries/insurance/insurance';
 import Automotive from './components/industries/automotive/automotive';
 import OnDemand from './components/industries/on-demand/on-demand';
+import Ecommerce from './components/industries/ecommerce/ecommerce';
+import LifeScience from './components/industries/life-science/life-science';
 
 function App() {
   const location = useLocation();
@@ -109,6 +111,8 @@ function App() {
 <Route path="/industries/insurance" element={<Insurance/>} />
 <Route path="/industries/automotive" element={<Automotive/>} />
 <Route path="/industries/on-demand" element={<OnDemand/>} />
+<Route path="/industries/ecommerce" element={<Ecommerce/>} />
+<Route path="/industries/life-science" element={<LifeScience/>} />
      {/* Add other routes here */}
       </Routes>
     </>

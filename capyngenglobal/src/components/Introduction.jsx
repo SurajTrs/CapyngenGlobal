@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../style.css';
+import '../style.css'; // Ensure this file has necessary styles
 
 const words = ["LET’S", "GROW", "TOGETHER"];
 
@@ -15,14 +15,14 @@ const Introduction = ({ onComplete }) => {
     }
 
     if (step === 0) {
-      const timer = setTimeout(() => setStep(1), 100); 
+      const timer = setTimeout(() => setStep(1), 50); 
       return () => clearTimeout(timer);
     }
 
     if (step === 1) {
       setSlideUpActive(false);
       const slideUpTimer = setTimeout(() => setSlideUpActive(true), 50);
-      const nextStepTimer = setTimeout(() => setStep(2), 1050);
+      const nextStepTimer = setTimeout(() => setStep(2), 650);
       return () => {
         clearTimeout(slideUpTimer);
         clearTimeout(nextStepTimer);
@@ -40,9 +40,8 @@ const Introduction = ({ onComplete }) => {
   }, [step, currentWordIndex, onComplete]);
 
   return (
-    <div className="intro-fullscreen black-bg">
+    <div className="intro-fullscreen">
       {step === 0 && <div className="white-circle expand" />}
-
       {currentWordIndex < words.length && (step === 1 || step === 2) && (
         <h1
           className={`intro-text
