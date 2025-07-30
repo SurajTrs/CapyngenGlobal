@@ -62,7 +62,6 @@ const DevOpsSolutionsPage = () => {
             className={`row bg-secondary bg-opacity-10 rounded-3 p-4 mb-5 align-items-center ${service.reverse ? "flex-md-row-reverse" : ""}`}
             style={{
               maxWidth: "1406px",
-              height: "506px",
               borderRadius: "12px",
               border: "1px solid rgba(255,255,255,0.1)",
               margin: "0 auto",
