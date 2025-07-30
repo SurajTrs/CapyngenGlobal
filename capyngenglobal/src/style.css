@@ -472,11 +472,13 @@ h3 {
   align-items: center;
   z-index: 9999;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
- .white-circle {
+/* Expanding circle */
+.white-circle {
   position: absolute;
-  width: 38px; 
+  width: 38px;
   height: 38px;
   background: white;
   border-radius: 50%;
@@ -485,10 +487,10 @@ h3 {
   transform: translate(-50%, -50%) scale(0);
   animation-fill-mode: forwards;
   z-index: 10;
-} 
+}
 
 .white-circle.expand {
-  animation: circleExpand 1.2s cubic-bezier(0.9, 0, 0.2, 0.1) forwards;
+  animation: circleExpand 0.5s cubic-bezier(0.9, 0, 0.2, 0.9) forwards;
 }
 
 @keyframes circleExpand {
@@ -500,9 +502,10 @@ h3 {
   }
 }
 
+/* Responsive animated word */
 .intro-text {
   position: relative;
-  font-size: 6.5rem;
+  font-size: clamp(2.5rem, 10vw, 6.5rem); /* Responsive font size */
   font-weight: 1000;
   color: white;
   opacity: 0;
@@ -510,6 +513,9 @@ h3 {
   z-index: 20;
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  text-align: center;
+  word-break: break-word;
+  max-width: 90vw;
 }
 
 .intro-text.slide-up {
@@ -522,8 +528,15 @@ h3 {
   opacity: 0;
   transform: translateY(0) scale(8);
   transition: opacity 0.5s ease, transform 0.5s ease;
-}/* --- Navbar Base Styles (keep existing) --- */
-/* src/style.css */
+}
+
+/* Optional: fine-tune padding and spacing on very small screens */
+@media (max-width: 480px) {
+  .intro-text {
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.1;
+  }
+}
 
 /* --- Base Navbar Styles --- */
 .capy-navbar {
@@ -544,8 +557,7 @@ h3 {
   text-decoration: none; /* Remove default underline */
 }
 
-.navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item.dropdown-trigger .nav-link.fw-semibold {
+.navbar-nav .nav-item .nav-link:hover {
   color: #00bcd4 !important; /* Highlight color for hover/active */
 }
 
@@ -837,4 +849,122 @@ background-color: #000;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+
+   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.social-icon {
+  font-size: 20px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0d6efd;
+}
+
+.blur-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #4d5bf9, #000000);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.top-left {
+  top: -40px;
+  left: -40px;
+}
+
+.bottom-left {
+  bottom: -40px;
+  left: -30px;
+}
+
+.top-right {
+  top: -50px;
+  right: -50px;
+}
+
+.bottom-right {
+  bottom: -40px;
+  right: -30px;
+}
+/* Footer specific styles */
+.capyngen-footer {
+  /* Applying the glass-card like background for consistency */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)); /* Darker gradient for footer */
+  backdrop-filter: blur(8px); /* Slightly less blur than cards to keep readability */
+  -webkit-backdrop-filter: blur(8px); /* For Safari and older Chrome */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+  color: #f0f0f0; /* Default text color for the footer */
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.capyngen-footer .footer-heading {
+  font-size: 1.25rem; /* Larger font for headings */
+  font-weight: 600; /* Semi-bold */
+  margin-bottom: 1rem;
+  color: #fff; /* Ensure headings are white */
+}
+
+.capyngen-footer .footer-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7); /* Slightly brighter white-50 for readability */
+}
+
+.capyngen-footer .footer-link {
+  color: rgba(255, 255, 255, 0.7); /* Light gray for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding-bottom: 0.2rem; /* Add some space below each link */
+  display: inline-block; /* Make padding effective */
+}
+
+.capyngen-footer .footer-link:hover {
+  color: #00bfff; /* A common vibrant blue for hover (e.g., a "techy" blue) */
+  text-decoration: underline;
+}
+
+.capyngen-footer .footer-contact-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.capyngen-footer .footer-contact-list i {
+  color: #00bfff; /* Icon color, matching hover effect or a theme accent */
+  font-size: 1rem;
+}
+
+.capyngen-footer .footer-divider {
+  border-color: rgba(255, 255, 255, 0.1); /* Lighter divider */
+}
+
+/* Social Icons Styling */
+.capyngen-footer .social-icons .social-icon-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.capyngen-footer .social-icons .social-icon-link:hover {
+  color: #00bfff;
+  transform: translateY(-3px);
 }

@@ -1,7 +1,8 @@
+// src/App.js
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'; // Ensure correct path
 import Landing from './components/Landing';
 import WelcomeMessage from './components/WelcomeMessage';
 import IndustriesPage from './components/IndustriesPage';
@@ -44,6 +45,11 @@ import Automotive from './components/industries/automotive/automotive';
 import OnDemand from './components/industries/on-demand/on-demand';
 import Ecommerce from './components/industries/ecommerce/ecommerce';
 import LifeScience from './components/industries/life-science/life-science';
+import ContactUs from './components/contact-us';
+import Footer from './components/Footer';
+import CompanyOverview from './components/company-overview';
+
+// Ensure correct path
 
 function App() {
   const location = useLocation();
@@ -61,7 +67,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar /> {/* This will be fixed */}
+
+      {/* All page content, including Routes and Footer, will scroll below the Navbar */}
       <Routes>
         <Route
           path="/"
@@ -69,52 +77,57 @@ function App() {
             <>
               <Landing />
               <WelcomeMessage />
-              <IndustriesPage/>
+              <IndustriesPage />
               <Stats />
               <WhyChoose />
+              {/* Footer will be rendered after WhyChoose and scroll with the page */}
             </>
           }
         />
-         <Route path="/services/applications-development" element={<ApplicationDevelopment />} />
-         <Route path="/services/web-development" element ={<WebDevelopment />} />
-         <Route path="/services/custom-ai-solution" element={<CustomAiSolution />} />
-         <Route path="/services/ui-ux-development" element={<UIUXDevelopment />} />
-         <Route path="/services/ecommerce-development" element={<EcommerceDevelopment />} />
-         <Route path="/services/blockchain-development" element={<BlockchainDevelopment />} />
-         <Route path="/services/seo-smm" element={<SeoSmm />} />
-         <Route path="/services/devops-solutions" element={<DevopsSolutions />} />
-         <Route path="/services/crm-management-software" element={<CrmManagementSoftware />} />
-         <Route path="/services/application-solutions" element={<ApplicationSolutions />} />
-         <Route path="/services/consulting" element={<Consulting />} />
-         <Route path="/services/data-analytics" element={<DataAnalytics />} />
-         <Route path="/services/enterprise-solution" element={<EnterpriseSolution />} />
-         <Route path="/services/network-solutions-services" element={<NetworkSolutions />} />
-         <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-         <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
-         
-<Route path="/services" element={<Services />} />   
+        {/* All other routes */}
+        <Route path="/services/applications-development" element={<ApplicationDevelopment />} />
+        <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/custom-ai-solution" element={<CustomAiSolution />} />
+        <Route path="/services/ui-ux-development" element={<UIUXDevelopment />} />
+        <Route path="/services/ecommerce-development" element={<EcommerceDevelopment />} />
+        <Route path="/services/blockchain-development" element={<BlockchainDevelopment />} />
+        <Route path="/services/seo-smm" element={<SeoSmm />} />
+        <Route path="/services/devops-solutions" element={<DevopsSolutions />} />
+        <Route path="/services/crm-management-software" element={<CrmManagementSoftware />} />
+        <Route path="/services/application-solutions" element={<ApplicationSolutions />} />
+        <Route path="/services/consulting" element={<Consulting />} />
+        <Route path="/services/data-analytics" element={<DataAnalytics />} />
+        <Route path="/services/enterprise-solution" element={<EnterpriseSolution />} />
+        <Route path="/services/network-solutions-services" element={<NetworkSolutions />} />
+        <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+        <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
 
-<Route path="/industries/banking" element={<BankingIndustryPage/>} />
-<Route path="/industries/communication-media" element={<CommunicationMedia/>} />
-<Route path="/industries/education" element={<Education/>} />
-<Route path="/industries/healthcare-fitness" element={<HealthCare/>} />
-<Route path="/industries/oil-gas" element={<OilGas/>} />
-<Route path="/industries/manufacturing" element={<Manufacturing/>} />
-<Route path="/industries/retail" element={<Retail/>} />
-<Route path="/industries/real-estate" element={<RealState/>} />
-<Route path="/industries/consumer-packaged-goods" element={<ConsumerPackage/>} />
-<Route path="/industries/energy-resources-utilities" element={<EnergyResources/>} />
-<Route path="/industries/travel-logistics" element={<TravelLogistics/>} />
-<Route path="/industries/high-tech" element={<HighTech/>} />
-<Route path="/industries/gaming" element={<Gaming/>} />
-<Route path="/industries/public-service" element={<PublicService/>} />
-<Route path="/industries/insurance" element={<Insurance/>} />
-<Route path="/industries/automotive" element={<Automotive/>} />
-<Route path="/industries/on-demand" element={<OnDemand/>} />
-<Route path="/industries/ecommerce" element={<Ecommerce/>} />
-<Route path="/industries/life-science" element={<LifeScience/>} />
-     {/* Add other routes here */}
+        <Route path="/services" element={<Services />} />
+
+        <Route path="/industries/banking" element={<BankingIndustryPage />} />
+        <Route path="/industries/communication-media" element={<CommunicationMedia />} />
+        <Route path="/industries/education" element={<Education />} />
+        <Route path="/industries/healthcare-fitness" element={<HealthCare />} />
+        <Route path="/industries/oil-gas" element={<OilGas />} />
+        <Route path="/industries/manufacturing" element={<Manufacturing />} />
+        <Route path="/industries/retail" element={<Retail />} />
+        <Route path="/industries/real-estate" element={<RealState />} />
+        <Route path="/industries/consumer-packaged-goods" element={<ConsumerPackage />} />
+        <Route path="/industries/energy-resources-utilities" element={<EnergyResources />} />
+        <Route path="/industries/travel-logistics" element={<TravelLogistics />} />
+        <Route path="/industries/high-tech" element={<HighTech />} />
+        <Route path="/industries/gaming" element={<Gaming />} />
+        <Route path="/industries/public-service" element={<PublicService />} />
+        <Route path="/industries/insurance" element={<Insurance />} />
+        <Route path="/industries/automotive" element={<Automotive />} />
+        <Route path="/industries/on-demand" element={<OnDemand />} />
+        <Route path="/industries/ecommerce" element={<Ecommerce />} />
+        <Route path="/industries/life-science" element={<LifeScience />} />
+
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/company-overview" element={<CompanyOverview />} />
       </Routes>
+      <Footer /> {/* This will scroll with the page content */}
     </>
   );
 }

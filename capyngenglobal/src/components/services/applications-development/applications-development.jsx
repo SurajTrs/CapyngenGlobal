@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ApplicationsDevelopment = () => {
   return (
-    <div className=" text-light min-vh-100 p-5" style={{background:"#191919ff"}} >
+    <div className=" text-light min-vh-100 p-5" style={{background:"#111111ff"}} >
       
       <div className="text-center mb-4 mt-5">
   <h1 className="fw-bold">
@@ -21,7 +21,7 @@ const ApplicationsDevelopment = () => {
   <div className="row bg-secondary bg-opacity-10 rounded-3 p-4 mb-5 align-items-center"
   style={{
  maxWidth: 'auto',
-    height: '506px',
+
     borderRadius: '12px',
     border: '1px solid rgba(255,255,255,0.1)',
     margin: '0 auto'
@@ -34,7 +34,7 @@ We create Android applications that help your company flourish. Capyngen creates
     </div>
     <div className="col-md-6">
       <img
-        src="https://img.icons8.com/clouds/500/android-os.png"
+        src="/assets/android.png"
         alt="Android App Development"
         className="img-fluid rounded"
       />
@@ -45,7 +45,7 @@ We create Android applications that help your company flourish. Capyngen creates
   <div className="row bg-secondary bg-opacity-10 rounded-3 p-4 mb-5 align-items-center flex-md-row-reverse"
    style={{
  maxWidth: 'auto',
-    height: '506px',
+
     borderRadius: '12px',
     border: '1px solid rgba(255,255,255,0.1)',
     margin: '0 auto'
@@ -59,7 +59,7 @@ Our hybrid app solutions will help you save both time and money. Capyngen develo
     </div>
     <div className="col-md-6">
       <img
-        src="https://img.icons8.com/clouds/500/mobile-app.png"
+        src="/assets/mobile-app.png"
         alt="Hybrid App Development"
         className="img-fluid rounded"
         
@@ -71,7 +71,7 @@ Our hybrid app solutions will help you save both time and money. Capyngen develo
   <div className="row bg-secondary bg-opacity-10 rounded-3 p-4 mb-5 align-items-center"
    style={{
  maxWidth: 'auto',
-    height: '506px',
+
     borderRadius: '12px',
     border: '1px solid rgba(255,255,255,0.1)',
     margin: '0 auto'
@@ -84,7 +84,7 @@ Want to impress individuals who have iPhones and iPads? Capyngen produces outsta
     </div>
     <div className="col-md-6">
       <img
-        src="https://img.icons8.com/clouds/500/ios-logo.png"
+        src="/assets/ios.png"
         alt="iOS App Development"
         className="img-fluid rounded"
       />
@@ -95,7 +95,7 @@ Want to impress individuals who have iPhones and iPads? Capyngen produces outsta
   <div className="row bg-secondary bg-opacity-10 rounded-3 p-4 mb-5 align-items-center flex-md-row-reverse"
      style={{
  maxWidth: 'auto',
-    height: '506px',
+ 
     borderRadius: '12px',
     border: '1px solid rgba(255,255,255,0.1)',
     margin: '0 auto'
@@ -108,7 +108,7 @@ Your app should be equally as one-of-a-kind as your company. Capyngen produces m
     </div>
     <div className="col-md-6">
       <img
-        src="https://img.icons8.com/clouds/500/customize-view.png"
+        src="/assets/customize.png"
         alt="Custom App Development"
         className="img-fluid rounded"
       />
@@ -124,7 +124,7 @@ Capyngen can help you transform your concept for a product into a profitable Saa
     </div>
     <div className="col-md-6">
       <img
-        src="https://img.icons8.com/clouds/500/services.png"
+        src="/assets/saas.png"
         alt="SaaS Development"
         className="img-fluid rounded"
       />
@@ -135,7 +135,7 @@ Capyngen can help you transform your concept for a product into a profitable Saa
   <div className="row bg-secondary bg-opacity-10 rounded-3 p-4 mb-5 align-items-center flex-md-row-reverse"
    style={{
  maxWidth: 'auto',
-    height: '506px',
+
     borderRadius: '12px',
     border: '1px solid rgba(255,255,255,0.1)',
     margin: '0 auto'
@@ -148,7 +148,7 @@ Do you want applications that are strong, operate fast, and can expand easily? C
     </div>
     <div className="col-md-6">
       <img
-        src="https://img.icons8.com/clouds/500/cloud.png"
+        src="/assets/cloud.png"
         alt="Cloud App Development"
         className="img-fluid rounded"
       />

@@ -6,18 +6,18 @@ const WebDevelopmentPage = () => {
     {
       title: "1. AI Development Services",
       description: " Capyngen offers powerful AI development services that may help your company work smarter and get more done.  We provide personalised AI solutions that help individuals make smarter choices, run their businesses more smoothly, and have a better experience.  They include smart automation technologies and machine learning models.  Use AI that is a great match for your company objectives to spur new ideass.",
-      image: "https://img.icons8.com/clouds/500/wordpress.png",
+      image: "/assets/AIdev.png",
     },
     {
       title: "2. AI Chatbot Development",
       description: "Capyngen produces intelligent AI chatbots that speak to your customers all day, every day.  Our chatbots work like a human assistant by answering questions, automating replies, and getting users more engaged.  Our bots are fantastic for organisations that provide services, eCommerce, and customer care since they make customers happy, save expenses, and cut down on the amount of labour that has to be done by hand.",
-      image: "https://img.icons8.com/clouds/500/domain.png",
+      image: "/assets/AIchat.png",
       reverse: true,
     },
     {
       title: "3. ChatGpt Integration Services",
       description: "You can leverage conversational AI using Capyngen's ChatGPT integration services.  We can easily link ChatGPT to your websites, CRMs, or applications so that you may conduct discussions that sound like they're happening in real time.  With ChatGPT-powered solutions that are smart, scalable, and dependable, you can make communication simpler, enhance the user experience, and automate customer care.",
-      image: "https://img.icons8.com/clouds/500/angularjs.png",
+      image: "/assets/AIservice.png",
     },
     
   ];

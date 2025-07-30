@@ -7,26 +7,26 @@ const ECommerceSolutionsPage = () => {
       title: "1. Shopify Development",
       description:
         "Capyngen builds Shopify shops that reflect your brand and maximize revenue. Our end-to-end Shopify development ensures your eCommerce store is easy to set up, fast-loading, and mobile-optimized. Whether you're launching a new store or scaling your business, our Shopify experts help you boost sales and enhance customer experience.",
-      image: "https://img.icons8.com/clouds/500/shopify.png",
+      image: "/assets/shopify.png",
     },
     {
       title: "2. WooCommerce Development",
       description:
         "Capyngen creates custom, feature-rich WooCommerce stores that are secure, fast, and responsive. From product pages to payment integration and shipping setups, we manage your entire online store infrastructure—ensuring smooth performance and rapid sales growth.",
-      image: "https://img.icons8.com/clouds/500/woocommerce.png",
+      image: "/assets/woocommerce.png",
       reverse: true,
     },
     {
       title: "3. VirtueMart Development",
       description:
         "Capyngen develops powerful VirtueMart eCommerce solutions integrated with Joomla. Features like inventory management, multilingual support, and custom checkout flows ensure flexibility and growth. Our VirtueMart builds are ideal for businesses needing robust, scalable platforms with great customer experiences.",
-      image: "https://img.icons8.com/clouds/500/joomla.png",
+      image: "/assets/joomla.png",
     },
     {
       title: "4. Magento Development",
       description:
         "Capyngen delivers high-performance Magento eCommerce stores with secure payments, responsive design, and intuitive interfaces. Our Magento solutions are perfect for both B2B and B2C models—helping you manage large inventories, increase sales, and drive business growth.",
-      image: "https://img.icons8.com/clouds/500/magento.png",
+      image: "/assets/magento.png",
       reverse: true,
     },
   ];
