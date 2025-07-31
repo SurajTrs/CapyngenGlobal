@@ -1,10 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
+import { useInView } from 'react-intersection-observer';
 import '../style.css';
 
-const Stats = () => {
+const StatBox = ({ label, target, isPercentage = false, suffix = '+' , start }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!start) return;
+
+    let startVal = 0;
+    const duration = 1500;
+    const increment = target / (duration / 30);
+
+    const counter = setInterval(() => {
+      startVal += increment;
+      if (startVal >= target) {
+        setCount(target);
+        clearInterval(counter);
+      } else {
+        setCount(Math.floor(startVal));
+      }
+    }, 30);
+
+    return () => clearInterval(counter);
+  }, [target, start]);
+
+  const formattedCount = String(count).padStart(3, '0');
+
   return (
-    <section className="stats-section text-center py-5">
+    <div className="stats-item">
+      <div className="stats-box">
+        {formattedCount.split('').map((digit, index) => (
+          <span key={index} className="digit-box">{digit}</span>
+        ))}
+        <span className="digit-box">{isPercentage ? '%' : suffix}</span>
+      </div>
+      <p className="stats-label">{label}</p>
+    </div>
+  );
+};
+
+const Stats = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3, // Start when 30% visible
+  });
+
+  return (
+    <section className="stats-section text-center py-5" ref={ref}>
       <Container>
         <p className="stats-tagline mb-1">
           We don’t just build projects. We build long-term digital success.
@@ -17,44 +61,17 @@ const Stats = () => {
         </h4>
 
         <div className="stats-layout">
-          {/* Top */}
           <div className="stats-item stats-top">
-            <div className="stats-box">
-              <span className="digit-box">0</span>
-              <span className="digit-box">0</span>
-              <span className="digit-box">0</span>
-            </div>
-            <p className="stats-label">Projects Successfully Delivered</p>
+            <StatBox label="Projects Successfully Delivered" target={120} start={inView} />
           </div>
-
-          {/* Left */}
           <div className="stats-item stats-left">
-            <div className="stats-box">
-              <span className="digit-box">0</span>
-              <span className="digit-box">0</span>
-               <span className="digit-box">0</span>
-            </div>
-            <p className="stats-label">Projects Currently Under Development</p>
+            <StatBox label="Projects Currently Under Development" target={20} start={inView} />
           </div>
-
-          {/* Right */}
           <div className="stats-item stats-right">
-            <div className="stats-box">
-              <span className="digit-box">0</span>
-              <span className="digit-box">0</span>
-               <span className="digit-box">0</span>
-            </div>
-            <p className="stats-label">Experts Across Development,<br />Marketing & AI</p>
+            <StatBox label="Experts Across Development, Marketing & AI" target={150} start={inView} />
           </div>
-
-          {/* Bottom */}
           <div className="stats-item stats-bottom">
-            <div className="stats-box">
-              <span className="digit-box">0</span>
-              <span className="digit-box">0</span>
-               <span className="digit-box">0</span>
-            </div>
-            <p className="stats-label">Client Retention Rate</p>
+            <StatBox label="Client Retention Rate" target={98} isPercentage={true} suffix="" start={inView} />
           </div>
         </div>
       </Container>

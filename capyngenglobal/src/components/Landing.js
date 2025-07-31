@@ -12,6 +12,8 @@ const Landing = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         position: 'relative',
+        marginTop: '-6rem',
+        
       }}
     >
       {/* Dark Overlay */}

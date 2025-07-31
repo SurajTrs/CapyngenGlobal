@@ -5,7 +5,7 @@ import MobileMenuItem from './MobileMenuItem'; // Import the recursive component
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false); // Controls desktop mega-dropdown visibility
-  const [activeMenu, setActiveMenu] = useState('What We Offer'); // Desktop active category
+  const [activeMenu, setActiveMenu] = useState('Industries'); // Desktop active category
   // This state controls the expansion of the *top-level* mobile categories (e.g., "What We Offer", "Industries")
   const [openMobileMenus, setOpenMobileMenus] = useState({});
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false); // Add at top of component
@@ -13,15 +13,14 @@ const Navbar = () => {
   const dropdownTimer = useRef(null); // Timer for desktop dropdown hover delay
 
   const menuData = {
-    'What We Offer': {
+    'Overview': {
       items: [
         {
-          title: 'Perpetually Adaptive Enterprise',
-          slug: 'perpetually-adaptive-enterprise',
+          title: 'Capyngen Global',
+          slug: 'capyngen-global',
           subItems: [
             { title: 'Digital Transformation', slug: 'digital-transformation' },
-            { title: 'Agile Enterprises', slug: 'agile-enterprises' },
-            { title: 'Modernization', slug: 'modernization' },
+           
             {
               title: 'Advanced Methodologies',
               slug: 'advanced-methodologies',
@@ -34,7 +33,6 @@ const Navbar = () => {
           ]
         },
         { title: 'Customer Experience', slug: 'customer-experience' },
-        { title: 'Data & Analytics Solutions', slug: 'data-analytics-solutions' },
       ],
     },
     'Industries': {
@@ -90,7 +88,14 @@ const Navbar = () => {
         { title: 'Web3 Development', slug: 'web3-development' },
       ],
     },
+    'Company Overview': {
+  items: [
+    { title: 'About Us', slug: 'about-us' },
+  ]
+},
+
   };
+  
 
   const generateSlug = (title) => {
     return title.toLowerCase().replace(/ & /g, '-and-').replace(/ /g, '-').replace(/[()]/g, '').replace(/,+/g, '');
@@ -117,7 +122,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-black position-relative capy-navbar">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top capy-navbar">
         <div className="container">
           <a className="navbar-brand capy-logo" href="/">
             <img
@@ -147,11 +152,19 @@ const Navbar = () => {
               {/* Added me-4 for spacing */}
               <li
                 className="nav-item position-relative d-none d-lg-block dropdown-trigger me-4"
-                onMouseEnter={() => handleDesktopMouseEnter('What We Offer')}
+                onMouseEnter={() => handleDesktopMouseEnter('Industries')}
                 onMouseLeave={handleDesktopMouseLeave}
               >
                 <a className="nav-link text-white fw-semibold" href="#">What We Offer ▾</a>
               </li>
+              <li
+  className="nav-item position-relative d-none d-lg-block dropdown-trigger me-4"
+  onMouseEnter={() => handleDesktopMouseEnter('Company Overview')}
+  onMouseLeave={handleDesktopMouseLeave}
+>
+  <a className="nav-link text-white fw-semibold" href="/company-overview">Company Overview ▾</a>
+</li>
+
 
               {/* Mobile Menu Structure - This li handles the top-level mobile categories, no me-4 here */}
               <li className="nav-item d-lg-none w-100 px-3 py-2">
@@ -182,10 +195,7 @@ const Navbar = () => {
                 ))}
               </li>
 
-              {/* Added me-4 for spacing to desktop visible static links */}
-              <li className="nav-item me-4">
-                <a className="nav-link text-white" href="/company-overview">Company Overview</a>
-              </li>
+        
               <li className="nav-item me-4">
                 <a className="nav-link text-white" href="/careers">Careers</a>
               </li>

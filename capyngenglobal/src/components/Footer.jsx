@@ -1,9 +1,9 @@
 // src/components/Footer/Footer.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../style.css'; // Link to your main stylesheet
 
 const Footer = () => {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [currentYear] = useState(new Date().getFullYear());
 
   // In a real application, you'd typically include this Footer component
   // in your main App.js or a Layout component.
@@ -64,13 +64,48 @@ const Footer = () => {
                 <a href="mailto:sales@capyngen.com" className="footer-link">sales@capyngen.com</a>
               </li>
             </ul>
-            {/* Optional: Social Media Icons */}
-            <div className="social-icons mt-3">
-              <a href="#" className="social-icon-link me-2"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="social-icon-link me-2"><i className="fab fa-twitter"></i></a>
-              <a href="#" className="social-icon-link me-2"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="social-icon-link"><i className="fab fa-instagram"></i></a>
-            </div>
+       <div className="social-icons mt-3">
+  <a
+    href="https://www.facebook.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="social-icon-link me-2"
+  >
+    <i className="fab fa-facebook-f"></i>
+  </a>
+
+  <a
+    href="https://twitter.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Twitter"
+    className="social-icon-link me-2"
+  >
+    <i className="fab fa-twitter"></i>
+  </a>
+
+  <a
+    href="https://www.linkedin.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="social-icon-link me-2"
+  >
+    <i className="fab fa-linkedin-in"></i>
+  </a>
+
+  <a
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="social-icon-link"
+  >
+    <i className="fab fa-instagram"></i>
+  </a>
+</div>
+
           </div>
         </div>
         <hr className="footer-divider my-4" />

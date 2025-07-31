@@ -45,9 +45,18 @@ import Automotive from './components/industries/automotive/automotive';
 import OnDemand from './components/industries/on-demand/on-demand';
 import Ecommerce from './components/industries/ecommerce/ecommerce';
 import LifeScience from './components/industries/life-science/life-science';
+import CapyngenGlobalPage from './components/overview/capyngen-global/capyngen-global';
+import CustomerExperience from './components/overview/customer-experience/customer-experience';
+import BlockchainDevelopmentPage from './components/enterprise-and-ai/blockchain-development/blockchain-development';
+import MetaverseDevelopmentPage from './components/enterprise-and-ai/metaverse-development/metaverse-development';
+import Web3DevelopmentPage from './components/enterprise-and-ai/web3-development/web3-development';
+import About from './components/company-overview/about-us/about-us';
+
 import ContactUs from './components/contact-us';
 import Footer from './components/Footer';
-import CompanyOverview from './components/company-overview';
+import CompanyOverview from './components/company-overview/company-overview';
+
+import CursorTrail from './components/CursorTrail';
 
 // Ensure correct path
 
@@ -67,8 +76,9 @@ function App() {
 
   return (
     <>
-      <Navbar /> {/* This will be fixed */}
-
+      <Navbar /> 
+      <CursorTrail />
+<div style={{ paddingTop: '100px' }}>
       {/* All page content, including Routes and Footer, will scroll below the Navbar */}
       <Routes>
         <Route
@@ -126,8 +136,17 @@ function App() {
 
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/company-overview" element={<CompanyOverview />} />
+        <Route path="/overview/capyngen-global" element={<CapyngenGlobalPage />} />
+        <Route path="/overview/customer-experience" element={<CustomerExperience />} />
+        <Route path="/enterprise-and-ai/blockchain-development" element={<BlockchainDevelopmentPage />} />
+        <Route path="/enterprise-and-ai/metaverse-development" element={<MetaverseDevelopmentPage/>}/>
+        <Route path="/enterprise-and-ai/web3-development" element={<Web3DevelopmentPage/>}/>
+        <Route path="/company-overview/about-us" element={<About/>}/>
+
+
       </Routes>
-      <Footer /> {/* This will scroll with the page content */}
+      <Footer /> 
+      </div>{/* This will scroll with the page content */}
     </>
   );
 }

@@ -82,8 +82,9 @@ const ContactPage = () => {
 
       {/* Contact Form Container */}
       <div
-        className="d-flex flex-column flex-lg-row align-items-stretch"
-        style={{
+  className="d-flex flex-column flex-lg-row align-items-stretch w-100 px-3 px-lg-5 mt-n3"
+style={{
+  
           background:
             "rgba(255, 255, 255, 0.05)",
           borderRadius: "20px",
@@ -209,7 +210,7 @@ const ContactPage = () => {
           style={{ minWidth: "350px" }}
           noValidate
         >
-          <div className="row g-4">
+          <div className="row gy-4 gx-3">
             <div className="col-lg-6">
               <label
                 htmlFor="firstName"
@@ -219,7 +220,7 @@ const ContactPage = () => {
               </label>
               <input
                 type="text"
-                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white w-100"
                 id="firstName"
                 placeholder=""
                 required
@@ -237,7 +238,7 @@ const ContactPage = () => {
               </label>
               <input
                 type="text"
-                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white w-100"
                 id="lastName"
                 placeholder=""
                 required
@@ -255,7 +256,7 @@ const ContactPage = () => {
               </label>
               <input
                 type="email"
-                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white w-100"
                 id="email"
                 placeholder=""
                 required
@@ -273,7 +274,7 @@ const ContactPage = () => {
               </label>
               <input
                 type="tel"
-                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white w-100"
                 id="phone"
                 placeholder="+91"
                 required
@@ -290,7 +291,7 @@ const ContactPage = () => {
                 Message
               </label>
               <textarea
-                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                className="form-control border-0 border-bottom rounded-0 bg-transparent text-white w-100"
                 id="message"
                 rows="1"
                 placeholder="Write your message.."
