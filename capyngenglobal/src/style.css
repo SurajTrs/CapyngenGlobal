@@ -917,8 +917,8 @@ background-color: #000;
 .capyngen-footer {
   /* Applying the glass-card like background for consistency */
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)); /* Darker gradient for footer */
-  backdrop-filter: blur(8px); /* Slightly less blur than cards to keep readability */
-  -webkit-backdrop-filter: blur(8px); /* For Safari and older Chrome */
+  -webkit-backdrop-filter: blur(8px); /* Slightly less blur than cards to keep readability */
+  backdrop-filter: blur(8px); /* For Safari and older Chrome */
   border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
   color: #f0f0f0; /* Default text color for the footer */
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
